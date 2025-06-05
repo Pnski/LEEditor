@@ -1,0 +1,32 @@
+body {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  font-family: "Segoe UI", sans-serif;
+  padding: 20px;
+}
+
+input[type="file"] {
+  margin-bottom: 20px;
+}
+
+ul#fileList {
+  padding-left: 0;
+}
+
+ul#fileList li {
+  cursor: pointer;
+  padding: 5px;
+  border-bottom: 1px solid #333;
+}
+
+ul#fileList li:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.json-viewer {
+  background-color: #2d2d2d;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: monospace;
+}
