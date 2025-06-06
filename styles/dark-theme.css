@@ -9,17 +9,30 @@ input[type="file"] {
   margin-bottom: 20px;
 }
 
-ul#fileList {
+#fileColumns {
+  display: flex;
+  gap: 1rem;
+}
+
+#fileColumns > div {
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  background: #f9f9f9;
+  max-height: 300px;
+  overflow-y: auto;
+  list-style-type: none;
   padding-left: 0;
 }
 
-ul#fileList li {
+/* Style list items inside all columns */
+#fileColumns li {
   cursor: pointer;
   padding: 5px;
   border-bottom: 1px solid #333;
 }
 
-ul#fileList li:hover {
+#fileColumns li:hover {
   background-color: #333;
   color: #fff;
 }

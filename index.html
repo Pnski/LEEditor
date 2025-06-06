@@ -7,13 +7,17 @@
 </head>
 
 <body>
-  <h1>🗂 Upload Last Epoch Save Folder</h1>
   <p>Please navigate to: <code>%USERPROFILE%\AppData\LocalLow\Eleventh Hour Games\Last Epoch\Saves</code></p>
   <input type="file" id="folderInput" webkitdirectory directory multiple>
-  <ul id="fileList"></ul>
-  <h2>🧩 Decompiled JSON</h2>
+  <h2>File List</h2>
+  <div id="fileColumns" style="display: flex; gap: 1rem;">
+    <div id="charList" style="flex: 1; border: 1px solid #ccc; padding: 1rem;">Character List</div>
+    <div id="storageList" style="flex: 1; border: 1px solid #ccc; padding: 1rem;">Storage</div>
+    <div id="column3" style="flex: 1; border: 1px solid #ccc; padding: 1rem;">Other</div>
+  </div>
+  <h2>Decompiled JSON</h2>
   <div id="jsonViewer" class="json-viewer"></div>
 
-  <script src="scripts/main.js"></script>
+  <script type="module" src="./scripts/main.js"></script>
 </body>
 </html>

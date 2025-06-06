@@ -1,25 +1,8 @@
-const folderInput = document.getElementById("folderInput");
-const fileList = document.getElementById("fileList");
+
+
+import "./fileHandler.js"
+
 const jsonViewer = document.getElementById("jsonViewer");
-
-folderInput.addEventListener("change", async (event) => {
-  const files = Array.from(event.target.files);
-  fileList.innerHTML = "";
-  jsonViewer.innerHTML = "";
-
-  const filteredFiles = files.filter(file => {
-    const parts = file.name.split(".");
-    const ext = parts.length > 1 ? parts.pop().toLowerCase() : "";
-    return ext === "";
-  });
-
-  filteredFiles.forEach(file => {
-    const li = document.createElement("li");
-    li.textContent = (file.webkitRelativePath || file.name).split('/').pop();
-    li.addEventListener("click", () => handleFileClick(file));
-    fileList.appendChild(li);
-  });
-});
 
 async function handleFileClick(file) {
   const text = await file.text();
