@@ -21,7 +21,7 @@ async function getCharData(file) {
 
 async function getStashData(file) {
     const json = parseJSON(await file.text())
-    return json["displayName"]
+    return [json["displayName"], json["categoryId"]]
 }
 
 
@@ -43,6 +43,31 @@ folderInput.addEventListener("change", async (event) => {
         return file.name.toLowerCase().includes("stash") && !(file.name.toLowerCase().includes("tab")) && (file.name.lastIndexOf('.') == -1);
     });
 
+    const stashJSON = parseJSON(await storeData[0].text())
+    const tabFileNames = Object.values(stashJSON["tabsv2"]);
+
+    for (const cat of Object.values(stashJSON["categories"])) {
+        const div = document.createElement("div");
+        div.id = cat.categoryId;
+        div.style = "order:" + cat.displayOrder
+        div.innerHTML = cat.displayName;
+        storageList.appendChild(div);
+    }
+
+    for (const name of tabFileNames) {
+        const matchingFile = storageFiles.find(file => file.name === name)
+        if (matchingFile) {
+            const div = document.createElement("div");
+            const stashData = await getStashData(matchingFile);
+            div.innerHTML = "-" + stashData[0];
+            div.style.cursor = "pointer";
+            div.addEventListener("click", () => handleFileClick(file));
+            document.getElementById(stashData[1]).appendChild(div);
+        } else {
+            console.warn("error in stashfiles")
+        }
+    }
+
     for (const file of charFiles) {
         const div = document.createElement("div");
         div.innerHTML = await getCharData(file);
@@ -50,13 +75,4 @@ folderInput.addEventListener("change", async (event) => {
         div.addEventListener("click", () => handleFileClick(file));
         charList.appendChild(div);
     }
-
-    for (const file of storageFiles) {
-        const div = document.createElement("div");
-        div.innerHTML = await getStashData(file);
-        div.style.cursor = "pointer";
-        div.addEventListener("click", () => handleFileClick(file));
-        storageList.appendChild(div);
-    }
-
 });
