@@ -26,7 +26,18 @@ ul#fileList li:hover {
 
 .json-viewer {
   background-color: #2d2d2d;
+  color: #d4d4d4;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 8px;
   font-family: monospace;
+}
+
+.json-viewer .json-viewer-key {
+  color: #9cdcfe;
+}
+.json-viewer .json-viewer-value-string {
+  color: #ce9178;
+}
+.json-viewer .json-viewer-value-number {
+  color: #b5cea8;
 }
