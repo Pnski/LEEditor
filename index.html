@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <link rel="icon" type="image/x-icon" href="https://lastepoch.com/favicon.ico">
@@ -12,13 +13,60 @@
   <input type="file" id="folderInput" webkitdirectory directory multiple>
   <h2>File List</h2>
   <div id="fileColumns">
-    <div id="charList" style="flex: 1; border: 1px solid #ccc; padding: 1rem;">Nothing Loaded</div>
-    <div id="storageList" style="display: flex; flex-direction: column; flex: 1; border: 1px solid #ccc; padding: 1rem;">Nothing Loaded</div>
-    <div id="generalList" style="flex: 1; border: 1px solid #ccc; padding: 1rem;">Other</div>
+    <div id="charList">Nothing Loaded</div>
+    <div id="storageList">Nothing Loaded</div>
+    <div id="generalList">
+      <div>
+        <img src="sources/img/gold_coins.png" alt="icon">
+        <input id="gold" type="number" min="0" max="2147483647" oninput="this.value = this.value.slice(0, 10)">
+      </div>
+      <div>
+        <img src="sources/img/Runes/Rune_of_Shattering.png" alt="icon">
+        <input id="rShattering" type="number" min="0" max="2147483647" oninput="this.value = this.value.slice(0, 10)">
+      </div>
+      <div>
+        <img src="sources/img/Runes/Rune_of_Refinement.png" alt="icon">
+        <input id="rRefinement" type="number" min="0" max="2147483647" oninput="this.value = this.value.slice(0, 10)">
+      </div>
+      <div>
+        <img src="sources/img/Runes/Rune_of_Removal.png" alt="icon">
+        <input id="rRemoval" type="number" min="0" max="2147483647" oninput="this.value = this.value.slice(0, 10)">
+      </div>
+      <div>
+        <img src="sources/img/Runes/Rune_of_Discovery.png" alt="icon">
+        <input id="rDiscovery" type="number" min="0" max="2147483647" oninput="this.value = this.value.slice(0, 10)">
+      </div>
+      <div>
+        <img src="sources/img/Runes/Rune_of_Shaping.png" alt="icon">
+        <input id="rShaping" type="number" min="0" max="2147483647" oninput="this.value = this.value.slice(0, 10)">
+      </div>
+      <div>
+        <img src="sources/img/Runes/Rune_of_Ascendance.png" alt="icon">
+        <input id="rAscendance" type="number" min="0" max="2147483647" oninput="this.value = this.value.slice(0, 10)">
+      </div>
+      <div>
+        <img src="sources/img/Runes/Rune_of_Creation.png" alt="icon">
+        <input id="rCreation" type="number" min="0" max="2147483647" oninput="this.value = this.value.slice(0, 10)">
+      </div>
+      <div>
+        <img src="sources/img/Runes/Rune_of_Havoc.png" alt="icon">
+        <input id="rHavoc" type="number" min="0" max="2147483647" oninput="this.value = this.value.slice(0, 10)">
+      </div>
+      <div>
+        <img src="sources/img/Runes/Rune_of_Redemption.png" alt="icon">
+        <input id="rRedemption" type="number" min="0" max="2147483647" oninput="this.value = this.value.slice(0, 10)">
+      </div>
+      <div>
+        <img src="sources/img/Runes/Rune_of_Weaving.png" alt="icon">
+        <input id="rWeaving" type="number" min="0" max="2147483647" oninput="this.value = this.value.slice(0, 10)">
+      </div>
+    </div>
+
   </div>
   <h2>Decompiled JSON</h2>
   <div id="jsonViewer" class="json-viewer"></div>
 
   <script type="module" src="./scripts/main.js"></script>
 </body>
+
 </html>

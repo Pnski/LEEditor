@@ -16,7 +16,7 @@ function parseJSON(text) {
 
 async function getCharData(file) {
     const json = parseJSON(await file.text())
-    return `<img src="sources/img/Classes/${classData[json["characterClass"]][json["chosenMastery"]]}.png" alt="${classData[json["characterClass"]][json["chosenMastery"]]}" style="height: 1em; vertical-align: middle;"> ${json["characterName"]}`;
+    return `<img src="sources/img/Classes/${classData[json["characterClass"]][json["chosenMastery"]]}.png" alt="${classData[json["characterClass"]][json["chosenMastery"]]}"> ${json["characterName"]}`;
 }
 
 async function getStashData(file) {
